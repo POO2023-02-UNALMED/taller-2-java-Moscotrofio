@@ -9,24 +9,15 @@ public class Auto {
     int registro;
     public static int cantidadCreados = 0;
 
-    public Auto(String modelo, int precio, Asiento[] asientos, String marca, Motor motor, int registro) {
-        this.modelo = modelo;
-        this.precio = precio;
-        this.asientos = asientos;
-        this.marca = marca;
-        this.motor = motor;
-        this.registro = registro;
-    }
-
-    int cantidadAsientos() {
-        int totalasientos = 0;
-        for (Asiento i : this.asientos) {
-            if (i.getClass() == Asiento.class) {
-                totalasientos++;
-            }
-        }
-        return totalasientos;
-    }
+	int cantidadAsientos() {
+		int numAsientos=0;
+		for (int z=0; z<asientos.length; z++) {
+			if (asientos[z] !=null) {
+				numAsientos++;
+			}
+		}
+		return numAsientos;
+	}
 
     String verificarIntegridad() {
         boolean original = true;
